@@ -5014,6 +5014,15 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
+         * @hide
+         */
+        public static final String OMNIJAWS_WEATHER_ICON_PACK = "omnijaws_weather_icon_pack";
+
+        /** @hide */
+        private static final Validator OMNIJAWS_WEATHER_ICON_PACK_VALIDATOR =
+                ANY_STRING_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -5085,6 +5094,7 @@ public final class Settings {
             ENABLE_CONDITIONS,
             ENABLE_SUGGESTIONS,
             OMNI_SYSTEM_PROXI_CHECK_ENABLED,
+            OMNIJAWS_WEATHER_ICON_PACK,
         };
 
         /**
@@ -5223,6 +5233,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_TIMEOUT);
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
             PRIVATE_SETTINGS.add(OMNI_SYSTEM_PROXI_CHECK_ENABLED);
+            PRIVATE_SETTINGS.add(OMNIJAWS_WEATHER_ICON_PACK);
         }
 
         /**
@@ -5327,6 +5338,7 @@ public final class Settings {
             VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES, ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
             VALIDATORS.put(OMNI_SYSTEM_PROXI_CHECK_ENABLED, OMNI_SYSTEM_PROXI_CHECK_ENABLED_VALIDATOR);
+            VALIDATORS.put(OMNIJAWS_WEATHER_ICON_PACK, OMNIJAWS_WEATHER_ICON_PACK_VALIDATOR);
         }
 
         /**
