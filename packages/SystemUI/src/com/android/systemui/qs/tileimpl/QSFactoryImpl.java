@@ -222,7 +222,7 @@ public class QSFactoryImpl implements QSFactory {
             case "dataswitch":
                 return mDataSwitchTileProvider.get();
             case "weather":
-                return mWeatherTile.get();
+                return mWeatherTileProvider.get();
         }
 
         // Intent tiles.
