@@ -26,6 +26,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.AttributeSet;
@@ -366,7 +367,7 @@ public class KeyguardStatusView extends GridLayout implements
     }
 
     private void updateSettings() {
-
+        final ContentResolver resolver = getContext().getContentResolver();
         final Resources res = getContext().getResources();
         boolean showWeather = Settings.System.getIntForUser(resolver,
                 Settings.System.OMNI_LOCKSCREEN_WEATHER_ENABLED, 0,
@@ -382,6 +383,11 @@ public class KeyguardStatusView extends GridLayout implements
                 mWeatherView.disableUpdates();
             }
         }
+    }
+
+    public void updateAll() {
+        updateSettings();
+    }
 
     // DateFormat.getBestDateTimePattern is extremely expensive, and refresh is called often.
     // This is an optimization to ensure we only recompute the patterns when the inputs change.
